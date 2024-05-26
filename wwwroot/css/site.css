@@ -21,6 +21,15 @@ body {
   margin-bottom: 60px;
 }
 
+.container {
+    background-color:white;
+}
+
+.tourbody {
+    margin-bottom: 50px;
+    background-color: beige
+}
+
 .input-validation-error {
     border: 1px solid #ff0000;
     background-color: #feedee;
@@ -76,7 +85,8 @@ validation-summary-error {
 }
 
 .slideshow-container {
-    width: calc(80.00% - 20px); /* 33.33% width for each product with 20px margin */
+    width: calc(80.00% - 20px);
+    height: 500px;
     margin: 0 auto;
     padding: 10px;
     position: relative;
@@ -90,8 +100,10 @@ validation-summary-error {
     .mySlides img {
         width: 100%;
         height: auto; /* Maintain aspect ratio */
-        max-height: 500px; /* Maximum height */
-        object-fit: contain; /* Ensure the entire image is visible */
+        max-height: 450px !important; /* Maximum height */
+        display: block;
+        margin: 0 auto; /* Center the image */
+        object-fit: cover;
     }
 
 .prev, .next {
@@ -107,15 +119,21 @@ validation-summary-error {
     border-radius: 0 3px 3px 0;
     user-select: none;
     z-index: 2;
+    background-color: dimgray;
 }
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 0;
+    border-radius: 50%;
 }
 
     .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
 .dot-container {

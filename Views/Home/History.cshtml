@@ -2,16 +2,15 @@
     Layout = null;
 }
 
-
 <!doctype html>
 <html>
 <head>
     <meta name="viewport" content="width:device-width" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/w3.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>
         History of Cebu
     </title>
@@ -22,9 +21,9 @@
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" asp-action="Index">Home</a>
+                <a class="nav-item nav-link" asp-action="Index">Home</a>
                 <div class="dropdown hover-nav">
-                    <a class="nav-item nav-link" asp-action="Tour">Tour</a>
+                    <a class="nav-item nav-link active" asp-action="Tour">Tour <span class="sr-only">(current)</span></a>
                     <div class="dropdown-content">
                         <a asp-action="Heritage">All Local Heritage Sites</a>
                         <a asp-action="Historic">Historic Sites</a>
@@ -38,7 +37,16 @@
         </div>
     </nav>
     <div class="text-center p-2">
-        <!--History diriiii-->
+            <div class="flex flex-col md:flex-row items-center bg-white dark:bg-zinc-800 p-6 rounded-lg shadow-lg">
+                <div class="md:w-1/2 p-4">
+                    <p class="text-zinc-800 dark:text-zinc-200">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae tortor nec mi maximus rhoncus in vitae elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nunc nisl, consectetur at dolor ut, hendrerit finibus enim. Nunc non scelerisque lectus. Nulla tristique est vel placerat condimentum. Etiam mauris odio, pellentesque quis condimentum nec, ullamcorper in mauris. Quisque vel ipsum non neque accumsan varius. Nullam urna velit, varius in sapien et, eleifend pellentesque lectus. Donec lorem leo, rhoncus eu tincidunt ut, pretium ac turpis. Aenean congue justo non quam lobortis pretium. Nunc a accumsan justo.
+                    </p>
+                </div>
+                <div class="md:w-1/2 p-4">
+                    <img class="rounded-lg shadow-lg" src="https://placehold.co/400x600" alt="Person in a library" />
+                </div>
+            </div>
     </div>
 </body>
 </html>

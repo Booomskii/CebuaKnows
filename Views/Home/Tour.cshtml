@@ -23,15 +23,14 @@
             }
         </style>
     </head>
-    <body>
+    <body class="tourbody">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding:20px;">
             <a class="navbar-brand" asp-action="Index">CebuaKnows</a>
-
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" asp-action="Index">Home</a>
+                    <a class="nav-item nav-link" asp-action="Index">Home</a>
                     <div class="dropdown hover-nav">
-                        <a class="nav-item nav-link" asp-action="Tour">Tour</a>
+                        <a class="nav-item nav-link active" asp-action="Tour">Tour <span class="sr-only">(current)</span></a>
                         <div class="dropdown-content">
                             <a asp-action="Heritage">All Local Heritage Sites</a>
                             <a asp-action="Historic">Historic Sites</a>
@@ -39,71 +38,93 @@
                             <a asp-action="Landmarks">Landmarks</a>
                         </div>
                     </div>
-                    <a class="nav-item nav-link" asp-action="RsvpForm">Publish Tour</a>
-                    <a class="nav-item nav-link " href="#">Contacts</a>
+                    <a class="nav-item nav-link" asp-action="History">History</a>
+                    <a class="nav-item nav-link" asp-action="Contacts">Contacts</a>
                 </div>
             </div>
         </nav>
-        <div class="text-center p-2">
-            <h1 class="text-center">Have Fun Touring!!</h1><br />
-            <div class="slideshow-container">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <div class="mySlides">
-                    <img src="~/images/fortsanpedro.jpg" alt="Image 1">
-                </div>
-                <div class="mySlides">
-                    <img src="~/images/kotafort.jpg" alt="Image 2">
-                </div>
-                <div class="mySlides">
-                    <img src="~/images/mactanshrine.jpg" alt="Image 3">
-                </div>
-                <div class="mySlides">
-                    <img src="~/images/magellanscross.jpg" alt="Image 3">
-                </div>
-                <div class="mySlides">
-                    <img src="~/images/plazaindependencia.jpg" alt="Image 3">
-                </div>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div style="margin:50px"></div>
+    <div class="container">
+        <h1 class="text-center" style="margin-top: 30px; font-family: 'Trebuchet MS'; font-weight: bold; font-size: 60px">Tour Around Cebu Islands</h1><br />
+        <div style="display:flex; justify-content: space-between; padding: 30px ">
+            <div style="width: 15%">
+                <label>Navigation Links:</label>
+                <button class="btn btn-primary" asp-action="History">Learn Cebu History</button>
+                <button class="btn btn-primary" asp-action="Historic">Historic Sites</button>
+                <button class="btn btn-primary" asp-action="Religious">Religious Sites</button>
+                <button class="btn btn-primary" asp-action="Landmark">Famous Landmarks</button>
             </div>
-            <div class="dot-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
+            <div class="p-2" style="width: 85%;">
+                <div class="slideshow-container" style="margin-bottom: -30px">
+                    <div class="mySlides">
+                        <img src="~/images/fortsanpedro.jpg" alt="Image 1">
+                    </div>
+                    <div class="mySlides">
+                        <img src="~/images/kotafort.jpg" alt="Image 2">
+                    </div>
+                    <div class="mySlides">
+                        <img src="~/images/mactanshrine.jpg" alt="Image 3">
+                    </div>
+                    <div class="mySlides">
+                        <img src="~/images/magellanscross.jpg" alt="Image 3">
+                    </div>
+                    <div class="mySlides">
+                        <img src="~/images/plazaindependencia.jpg" alt="Image 3">
+                    </div>
+                    <center>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </center>
+                </div>
+                <div class="dot-container" style="">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
             </div>
         </div>
-        <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
+        <h6 style="text-align:justify; margin-top: 30px; padding: 20px">
+            Cebu's historical sites are like weathered storytellers, their aged facades whispering tales of a vibrant past.
+            Worn forts stand guard, their stones etched with memories of conquest and defense. Grand houses, adorned with
+            intricate carvings, offer glimpses into the lives of past residents. Some structures speak of foreign influences,
+            their architecture echoing the arrival of new cultures. Others, with a more defiant air, commemorate local heroes
+            who stood against change. Together, these historical sites become a captivating tapestry, weaving a story of
+            encounters, faith, resilience, and the enduring spirit that continues to define Cebu.
+        </h6>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
             }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
 
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = slides.length }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-
-            setInterval(function () {
-                plusSlides(1);
-            }, 3000); // Change image every 3 seconds
-        </script>
+        setInterval(function () {
+            plusSlides(1);
+        }, 3000); // Change image every 3 seconds
+    </script>
     </body>
 </html>
