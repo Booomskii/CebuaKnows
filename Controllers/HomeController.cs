@@ -52,6 +52,11 @@ namespace CebuaKnows.Controllers
             return View();
         }
 
+        public ViewResult Contacts()
+        {
+            return View();
+        }
+
         public IActionResult Explore(string place)
         {
             var response = Repository.responses.FirstOrDefault(r => r.Place == place);
